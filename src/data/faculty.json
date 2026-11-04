@@ -1,0 +1,18 @@
+[
+  {
+    "id": "F001",
+    "name": "Demo Faculty 1",
+    "designation": "Professor",
+    "department": "IT",
+    "room": "Cabin 201",
+    "floor": 2
+  },
+  {
+    "id": "F002",
+    "name": "Demo Faculty 2",
+    "designation": "Assistant Professor",
+    "department": "Computer Science",
+    "room": "Cabin 301",
+    "floor": 3
+  }
+]

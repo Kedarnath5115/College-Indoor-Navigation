@@ -1,0 +1,20 @@
+[
+  {
+    "id": "D001",
+    "name": "Information Technology",
+    "shortName": "IT",
+    "floor": 3
+  },
+  {
+    "id": "D002",
+    "name": "Computer Science",
+    "shortName": "CS",
+    "floor": 4
+  },
+  {
+    "id": "D003",
+    "name": "Electronics and Telecommunication",
+    "shortName": "ENTC",
+    "floor": 2
+  }
+]

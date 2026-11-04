@@ -1,0 +1,445 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+  font-family: 'Inter', sans-serif;
+  color: #172033;
+  background: #f5f7fb;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+button, input {
+  font: inherit;
+}
+
+.navbar {
+  height: 76px;
+  background: white;
+  border-bottom: 1px solid #e8ebf2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 8%;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-icon {
+  width: 42px;
+  height: 42px;
+  background: #315bea;
+  color: white;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.brand h2 {
+  margin: 0;
+  font-size: 21px;
+}
+
+.brand h2 span {
+  color: #315bea;
+}
+
+.brand small {
+  color: #8992a5;
+  font-size: 11px;
+}
+
+.nav-status {
+  color: #68738a;
+  font-size: 12px;
+}
+
+.status-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: #20bd80;
+  border-radius: 50%;
+  margin-right: 6px;
+}
+
+.container {
+  max-width: 1120px;
+  margin: auto;
+  padding: 65px 25px 25px;
+}
+
+.welcome {
+  margin-bottom: 35px;
+}
+
+.eyebrow {
+  color: #315bea;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  font-size: 11px;
+}
+
+.welcome h1 {
+  font-size: clamp(34px, 5vw, 53px);
+  line-height: 1.16;
+  margin: 15px 0;
+  letter-spacing: -2px;
+}
+
+.welcome h1 span {
+  color: #315bea;
+}
+
+.subtitle {
+  color: #788297;
+  font-size: 15px;
+}
+
+.search-panel {
+  background: white;
+  padding: 27px;
+  border: 1px solid #e8ebf2;
+  border-radius: 17px;
+  box-shadow: 0 8px 30px #1c2d4d08;
+}
+
+.search-panel label {
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 13px;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  border: 1px solid #dfe4ef;
+  border-radius: 10px;
+  padding: 6px 7px 6px 15px;
+  gap: 12px;
+}
+
+.search-icon {
+  font-size: 25px;
+  color: #8992a5;
+}
+
+.search-box input {
+  flex: 1;
+  border: 0;
+  outline: none;
+  min-width: 0;
+  padding: 10px 0;
+  font-size: 14px;
+}
+
+.search-box button {
+  border: 0;
+  background: #315bea;
+  color: white;
+  padding: 12px 22px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.results {
+  display: grid;
+  gap: 9px;
+  margin-top: 15px;
+}
+
+.result-card {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
+  background: #f8f9fc;
+  border: 1px solid #e9edf5;
+  padding: 14px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.result-card strong {
+  font-size: 14px;
+}
+
+.result-card p {
+  margin: 5px 0 0;
+  color: #818ba0;
+  font-size: 12px;
+}
+
+.view-link, .destination-tag {
+  color: #315bea;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.destination-tag {
+  background: #eaf0ff;
+  padding: 7px 10px;
+  border-radius: 6px;
+}
+
+.message {
+  color: #7c879a;
+  font-size: 13px;
+}
+
+.navigation-section {
+  margin-top: 55px;
+}
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.section-heading h2 {
+  font-size: 25px;
+  margin: 5px 0;
+}
+
+.floor-count {
+  background: #eaf0ff;
+  color: #315bea;
+  padding: 8px 13px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.map-layout {
+  display: grid;
+  grid-template-columns: 210px 1fr;
+  gap: 20px;
+}
+
+.floor-panel, .map-panel {
+  background: white;
+  border: 1px solid #e8ebf2;
+  border-radius: 15px;
+  padding: 22px;
+}
+
+.floor-panel h3, .map-header h3 {
+  margin: 0 0 17px;
+  font-size: 15px;
+}
+
+.floor-buttons {
+  display: grid;
+  gap: 9px;
+}
+
+.floor-btn {
+  background: #f7f8fb;
+  border: 1px solid #edf0f5;
+  color: #68738a;
+  text-align: left;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.floor-btn.active {
+  background: #315bea;
+  border-color: #315bea;
+  color: white;
+  font-weight: 600;
+}
+
+.map-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.map-header h3 {
+  margin-bottom: 5px;
+}
+
+.map-header p {
+  margin: 0 0 15px;
+  font-size: 11px;
+  color: #8992a5;
+}
+
+.map-label {
+  font-size: 10px;
+  color: #315bea;
+  background: #eaf0ff;
+  padding: 7px;
+  border-radius: 5px;
+}
+
+.floor-map {
+  min-height: 260px;
+  padding: 20px;
+  background: #f5f7fc;
+  border: 1px dashed #d5dced;
+  border-radius: 10px;
+}
+
+.map-corridor {
+  background: #e6eaf3;
+  color: #737f96;
+  padding: 10px;
+  text-align: center;
+  border-radius: 6px;
+  font-size: 10px;
+  letter-spacing: 1px;
+  margin-bottom: 17px;
+}
+
+.room-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.map-room {
+  min-height: 65px;
+  background: white;
+  border: 1px solid #dfe5f0;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #34415b;
+}
+
+.map-room span, .map-room small {
+  display: block;
+}
+
+.map-room span {
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.map-room small {
+  font-size: 10px;
+  color: #8992a5;
+  margin-top: 5px;
+}
+
+.map-room.selected {
+  background: #315bea;
+  color: white;
+  border-color: #315bea;
+}
+
+.map-room.selected small {
+  color: #e2e9ff;
+}
+
+.empty-floor {
+  color: #8992a5;
+  font-size: 13px;
+}
+
+.map-legend {
+  display: flex;
+  gap: 20px;
+  margin-top: 18px;
+  font-size: 11px;
+  color: #778197;
+}
+
+.map-legend span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.map-legend i {
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+  display: inline-block;
+}
+
+.legend-room {
+  background: #dfe5f0;
+}
+
+.legend-office {
+  background: #f4dca3;
+}
+
+.legend-selected {
+  background: #315bea;
+}
+
+footer {
+  border-top: 1px solid #e5e9f1;
+  margin-top: 60px;
+  padding: 22px 0;
+  display: flex;
+  justify-content: space-between;
+  color: #8992a5;
+  font-size: 11px;
+}
+
+footer span {
+  color: #315bea;
+}
+
+@media (max-width: 650px) {
+  .navbar {
+    padding: 0 18px;
+  }
+
+  .container {
+    padding: 40px 16px 20px;
+  }
+
+  .nav-status {
+    font-size: 10px;
+  }
+
+  .map-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .floor-buttons {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .room-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .search-panel {
+    padding: 18px;
+  }
+
+  .search-box button {
+    padding: 11px;
+  }
+
+  footer {
+    flex-direction: column;
+    gap: 8px;
+  }
+}

@@ -1,0 +1,32 @@
+[
+  {
+    "id": "FAC001",
+    "name": "Principal Office",
+    "type": "Office",
+    "floor": 0
+  },
+  {
+    "id": "FAC002",
+    "name": "Student Section",
+    "type": "Office",
+    "floor": 0
+  },
+  {
+    "id": "FAC003",
+    "name": "Staff Room",
+    "type": "Facility",
+    "floor": 2
+  },
+  {
+    "id": "FAC004",
+    "name": "Boys Washroom",
+    "type": "Washroom",
+    "floor": 1
+  },
+  {
+    "id": "FAC005",
+    "name": "Girls Washroom",
+    "type": "Washroom",
+    "floor": 1
+  }
+]

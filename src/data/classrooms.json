@@ -1,0 +1,38 @@
+[
+  {
+    "id": "C101",
+    "name": "Room 101",
+    "floor": 1,
+    "type": "Classroom"
+  },
+  {
+    "id": "C102",
+    "name": "Room 102",
+    "floor": 1,
+    "type": "Classroom"
+  },
+  {
+    "id": "C201",
+    "name": "Room 201",
+    "floor": 2,
+    "type": "Classroom"
+  },
+  {
+    "id": "C202",
+    "name": "Room 202",
+    "floor": 2,
+    "type": "Classroom"
+  },
+  {
+    "id": "C301",
+    "name": "Room 301",
+    "floor": 3,
+    "type": "Classroom"
+  },
+  {
+    "id": "C401",
+    "name": "Room 401",
+    "floor": 4,
+    "type": "Classroom"
+  }
+]
