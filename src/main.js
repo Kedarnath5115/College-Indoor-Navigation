@@ -1,6 +1,9 @@
 
 import './style.css'
-
+import groundFloorSvg from '../maps/floor-0.svg?raw'
+import firstFloorSvg from '../maps/floor-1.svg?raw'
+import secondFloorSvg from '../maps/floor-2.svg?raw'
+import thirdFloorSvg from '../maps/floor-3.svg?raw'
 import classrooms from './data/classrooms.json'
 import floors from './data/floors.json'
 import facilities from './data/facilities.json'
@@ -31,7 +34,8 @@ const locations = [
     type: 'Department',
     shortName: department.shortName,
     floor: department.floor
-  }))
+  })),
+  
 ]
 
 // ========================================
@@ -217,74 +221,70 @@ const mapTitle = document.querySelector('#mapTitle')
 // ========================================
 // 6. RENDER FLOOR MAP
 // ========================================
-
 function renderMap() {
-
-  const floorLocations = locations.filter(
-    location => location.floor === currentFloor
-  )
-
   mapTitle.textContent = getFloorName(currentFloor)
 
-  floorMap.innerHTML = `
+  if (currentFloor === 0) {
+    floorMap.innerHTML = groundFloorSvg
 
-    <div class="map-corridor">
-      MAIN CORRIDOR
-    </div>
+  } else if (currentFloor === 1) {
+    floorMap.innerHTML = firstFloorSvg
+  } else if (currentFloor === 2) {
+  floorMap.innerHTML = secondFloorSvg
+  } else if (currentFloor === 3) {
+  floorMap.innerHTML = thirdFloorSvg
 
-    <div class="room-grid">
 
-      ${
-        floorLocations.length
+  } else {
+    floorMap.innerHTML = `
+      <p class="empty-floor">
+        Map for this floor will be added later.
+      </p>
+    `
+    return
+  }
 
-        ? floorLocations.map(location => `
+  // Highlight selected room
+  if (selectedLocation) {
+    const room = floorMap.querySelector(`#${selectedLocation.id}`)
 
-          <button
-            class="map-room ${
-              selectedLocation?.id === location.id
-                ? 'selected'
-                : ''
-            }"
-            data-id="${location.id}"
-          >
+    if (room) {
+    room.style.fill = '#a3ff6f'
+    room.style.stroke = '#a3ff6f'
+    room.style.strokeWidth = '4'
+    room.style.filter = 'drop-shadow(0 0 12px #a3ff6f)'
+    room.style.animation = 'roomPulse 1.2s ease-in-out infinite alternate'
+  }
+  }
 
-            <span>${location.name}</span>
+  // Make rooms clickable
+  floorMap.querySelectorAll(
+  '[id^="G0"], [id^="F1"], [id^="S2"], [id^="T3"]'
+).forEach(room => {
+    room.style.cursor = 'pointer'
 
-            <small>
-              ${location.room || location.type}
-            </small>
-
-          </button>
-
-        `).join('')
-
-        : `
-          <p class="empty-floor">
-            No sample locations added to this floor.
-          </p>
-        `
-      }
-
-    </div>
-  `
-
-  document.querySelectorAll('.map-room').forEach(button => {
-
-    button.addEventListener('click', () => {
-
-      const location = locations.find(
-        item => item.id === button.dataset.id
-      )
+    room.addEventListener('click', () => {
+      const location = locations.find(item => item.id === room.id)
 
       if (location) {
         selectLocation(location)
       }
-
     })
-
   })
-
 }
+
+  // Allow clicking rooms on the map
+ floorMap.querySelectorAll('[id^="G0"], [id^="F1"]').forEach(room => {
+    room.style.cursor = 'pointer'
+
+    room.addEventListener('click', () => {
+      const location = locations.find(
+        item => item.id === room.id
+      )
+
+      if (location) selectLocation(location)
+    })
+  })
 
 // ========================================
 // 7. SELECT DESTINATION

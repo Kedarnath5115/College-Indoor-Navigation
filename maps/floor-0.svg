@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" width="900" height="600">
+
+  <rect width="900" height="600" fill="#f8fafc"/>
+
+  <!-- Title -->
+
+<text x="450" y="35" text-anchor="middle"
+     font-size="24" font-weight="bold" fill="#1e293b">
+Ground Floor </text>
+
+  <!-- Corridor -->
+
+<rect x="100" y="260" width="700" height="90"
+     rx="8" fill="#e2e8f0" stroke="#64748b" stroke-width="2"/>
+
+<text x="450" y="310" text-anchor="middle"
+     font-size="20" fill="#334155">
+MAIN CORRIDOR </text>
+
+  <!-- Top row rooms -->
+
+  <g fill="#dbeafe" stroke="#2563eb" stroke-width="2">
+    <rect x="100" y="80" width="160" height="150" rx="6" id="G01"/>
+    <rect x="280" y="80" width="160" height="150" rx="6" id="G02"/>
+    <rect x="460" y="80" width="160" height="150" rx="6" id="G03"/>
+    <rect x="640" y="80" width="160" height="150" rx="6" id="G04"/>
+  </g>
+
+  <!-- Bottom row rooms -->
+
+  <g fill="#dbeafe" stroke="#2563eb" stroke-width="2">
+    <rect x="100" y="380" width="160" height="150" rx="6" id="G05"/>
+    <rect x="280" y="380" width="160" height="150" rx="6" id="G06"/>
+    <rect x="460" y="380" width="160" height="150" rx="6" id="G07"/>
+    <rect x="640" y="380" width="160" height="150" rx="6" id="G08"/>
+  </g>
+
+  <!-- Room labels -->
+
+<g font-size="22" font-weight="bold"
+  fill="#1e40af" text-anchor="middle"> <text x="180" y="160">G01</text> <text x="360" y="160">G02</text> <text x="540" y="160">G03</text> <text x="720" y="160">G04</text>
+
+```
+<text x="180" y="460">G05</text>
+<text x="360" y="460">G06</text>
+<text x="540" y="460">G07</text>
+<text x="720" y="460">G08</text>
+```
+
+  </g>
+
+</svg>

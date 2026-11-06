@@ -5,18 +5,14 @@
   },
   {
     "id": 1,
-    "name": "Floor 1"
+    "name": "First Floor"
   },
   {
     "id": 2,
-    "name": "Floor 2"
+    "name": "Second Floor"
   },
   {
     "id": 3,
-    "name": "Floor 3"
-  },
-  {
-    "id": 4,
-    "name": "Floor 4"
+    "name": "Third Floor"
   }
 ]

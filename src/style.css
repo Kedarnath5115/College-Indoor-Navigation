@@ -301,7 +301,42 @@ button, input {
   border: 1px dashed #d5dced;
   border-radius: 10px;
 }
+/* SVG FLOOR MAP */
+.floor-map svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  min-width: 550px;
+  margin: auto;
+}
 
+/* Room styling */
+.floor-map svg rect[id] {
+  fill: #dbeafe;
+  stroke: #2563eb;
+  stroke-width: 2;
+  cursor: pointer;
+  transition: fill 0.2s ease, stroke-width 0.2s ease;
+}
+
+/* Room hover */
+.floor-map svg rect[id]:hover {
+  fill: #bfdbfe;
+  stroke-width: 3;
+}
+
+/* Map scrolling */
+.floor-map {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+/* Selected room */
+.floor-map svg rect[id][style*="fill: rgb(49, 94, 251)"] {
+  fill: #315efb;
+  stroke: #1e40af;
+  stroke-width: 4;
+}
 .map-corridor {
   background: #e6eaf3;
   color: #737f96;
@@ -441,5 +476,750 @@ footer span {
   footer {
     flex-direction: column;
     gap: 8px;
+  }
+}
+/* MOBILE MAP IMPROVEMENTS */
+@media (max-width: 650px) {
+
+  .floor-map {
+    padding: 10px;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  .floor-map svg {
+    min-width: 550px;
+    width: 100%;
+    height: auto;
+  }
+
+  .map-panel {
+    padding: 14px;
+  }
+
+  .map-legend {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+}
+/* =================================
+   CAMPUSNAV PREMIUM UI REDESIGN
+================================= */
+
+:root {
+  --primary: #315bea;
+  --primary-dark: #2348cc;
+  --bg: #f4f7ff;
+  --surface: #ffffff;
+  --text: #172033;
+  --muted: #78849b;
+  --border: #e7ebf4;
+  --shadow: 0 12px 35px rgba(35, 55, 100, 0.07);
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* NAVBAR */
+
+.navbar {
+  height: 82px;
+  padding: 0 7%;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(15px);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.brand-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  box-shadow: 0 5px 15px #315bea35;
+}
+
+.brand h2 {
+  font-size: 23px;
+  letter-spacing: -0.8px;
+}
+
+/* MAIN CONTAINER */
+
+.container {
+  max-width: 1350px;
+  padding: 65px 35px 30px;
+}
+
+/* HERO */
+
+.welcome {
+  margin-bottom: 42px;
+}
+
+.welcome h1 {
+  font-size: clamp(38px, 5vw, 62px);
+  font-weight: 800;
+  letter-spacing: -2.8px;
+  line-height: 1.12;
+}
+
+.welcome h1 span {
+  background: linear-gradient(90deg, #315bea, #7595ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* SEARCH PANEL */
+
+.search-panel {
+  padding: 32px;
+  border-radius: 22px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+}
+
+.search-panel label {
+  font-size: 16px;
+  margin-bottom: 16px;
+}
+
+.search-box {
+  min-height: 62px;
+  border-radius: 13px;
+  border: 1px solid #dce3f2;
+  transition: 0.2s ease;
+}
+
+.search-box:focus-within {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px #315bea15;
+}
+
+.search-box input {
+  font-size: 15px;
+}
+
+.search-box button {
+  padding: 14px 27px;
+  border-radius: 10px;
+  transition: 0.2s ease;
+}
+
+.search-box button:hover {
+  background: var(--primary-dark);
+  transform: translateY(-1px);
+}
+
+/* SEARCH RESULTS */
+
+.result-card {
+  background: #f8faff;
+  border-radius: 13px;
+  padding: 17px;
+  border: 1px solid var(--border);
+  transition: 0.2s ease;
+}
+
+.result-card:hover {
+  border-color: #b9c9ff;
+  background: #f2f6ff;
+}
+
+/* BUILDING SECTION */
+
+.navigation-section {
+  margin-top: 65px;
+}
+
+.section-heading h2 {
+  font-size: 30px;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.floor-count {
+  padding: 11px 18px;
+  font-size: 13px;
+}
+
+/* FLOOR PANEL */
+
+.map-layout {
+  grid-template-columns: 235px minmax(0, 1fr);
+  gap: 24px;
+  align-items: stretch;
+}
+
+.floor-panel,
+.map-panel {
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+}
+
+.floor-panel h3 {
+  font-size: 17px;
+  margin-bottom: 22px;
+}
+
+.floor-buttons {
+  gap: 12px;
+}
+
+.floor-btn {
+  padding: 16px;
+  border-radius: 11px;
+  font-size: 13px;
+  transition: 0.2s ease;
+}
+
+.floor-btn:hover {
+  background: #edf2ff;
+  border-color: #c6d3ff;
+  color: var(--primary);
+}
+
+.floor-btn.active {
+  background: linear-gradient(110deg, #315bea, #5279f5);
+  border-color: transparent;
+  box-shadow: 0 5px 15px #315bea35;
+}
+
+/* MAP PANEL */
+
+.map-header h3 {
+  font-size: 19px;
+  font-weight: 800;
+}
+
+.map-header p {
+  font-size: 13px;
+}
+
+.map-label {
+  padding: 9px 13px;
+  border-radius: 8px;
+  font-weight: 700;
+}
+
+.floor-map {
+  min-height: 350px;
+  padding: 22px;
+  border: 1px solid #e1e8f7;
+  border-radius: 15px;
+  background: #f7f9ff;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+/* SVG MAP */
+
+.floor-map svg {
+  display: block;
+  width: 100%;
+  min-width: 550px;
+  height: auto;
+  margin: auto;
+}
+
+.floor-map svg rect[id] {
+  fill: #dce8ff;
+  stroke: #5278ed;
+  stroke-width: 2;
+  cursor: pointer;
+  transition: fill 0.2s ease, stroke-width 0.2s ease;
+}
+
+.floor-map svg rect[id]:hover {
+  fill: #bcd1ff;
+  stroke-width: 3;
+}
+
+/* LEGEND */
+
+.map-legend {
+  margin-top: 22px;
+  gap: 25px;
+  font-size: 12px;
+}
+
+/* FOOTER */
+
+footer {
+  margin-top: 70px;
+  padding: 27px 0;
+  border-color: var(--border);
+}
+
+/* =================================
+   MOBILE RESPONSIVE DESIGN
+================================= */
+
+@media (max-width: 650px) {
+
+  .navbar {
+    height: 70px;
+    padding: 0 16px;
+  }
+
+  .container {
+    padding: 38px 16px 20px;
+  }
+
+  .welcome h1 {
+    font-size: 37px;
+    letter-spacing: -1.8px;
+  }
+
+  .search-panel {
+    padding: 19px;
+    border-radius: 17px;
+  }
+
+  .search-box {
+    gap: 8px;
+  }
+
+  .search-box button {
+    padding: 12px 15px;
+  }
+
+  .navigation-section {
+    margin-top: 45px;
+  }
+
+  .section-heading h2 {
+    font-size: 23px;
+  }
+
+  .map-layout {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .floor-panel,
+  .map-panel {
+    padding: 17px;
+    border-radius: 16px;
+  }
+
+  .floor-buttons {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .floor-map {
+    padding: 12px;
+    min-height: 250px;
+    overflow-x: auto;
+  }
+
+  .floor-map svg {
+    width: 100%;
+    min-width: 550px;
+  }
+
+  .map-legend {
+    flex-wrap: wrap;
+    gap: 13px;
+  }
+
+  footer {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+/* =====================================
+   CAMPUSNAV - GEN Z DARK MODE
+===================================== */
+
+:root {
+  --bg: #090b14;
+  --surface: #121625;
+  --surface2: #191f32;
+  --primary: #8b5cf6;
+  --secondary: #38bdf8;
+  --neon: #a3ff6f;
+  --text: #f8fafc;
+  --muted: #929bb2;
+  --border: #272e43;
+}
+
+/* GLOBAL */
+
+body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* NAVBAR */
+
+.navbar {
+  background: rgba(9, 11, 20, 0.95);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(15px);
+}
+
+.brand-icon {
+  background: linear-gradient(135deg, #8b5cf6, #38bdf8);
+  box-shadow: 0 0 20px #8b5cf655;
+}
+
+.brand h2 {
+  color: white;
+}
+
+.brand h2 span {
+  color: var(--secondary);
+}
+
+.brand small,
+.nav-status {
+  color: var(--muted);
+}
+
+/* HERO */
+
+.eyebrow {
+  color: var(--secondary);
+}
+
+.welcome h1 {
+  color: white;
+}
+
+.welcome h1 span {
+  background: linear-gradient(90deg, #8b5cf6, #38bdf8);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+  color: var(--muted);
+}
+
+/* SEARCH PANEL */
+
+.search-panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: 0 10px 40px #00000030;
+}
+
+.search-panel label {
+  color: white;
+}
+
+.search-box {
+  background: var(--surface2);
+  border: 1px solid #343d57;
+}
+
+.search-box:focus-within {
+  border-color: var(--secondary);
+  box-shadow: 0 0 15px #38bdf830;
+}
+
+.search-box input {
+  background: transparent;
+  color: white;
+}
+
+.search-box input::placeholder {
+  color: #77819a;
+}
+
+.search-icon {
+  color: var(--secondary);
+}
+
+.search-box button {
+  background: linear-gradient(135deg, #8b5cf6, #536dfe);
+  color: white;
+  box-shadow: 0 0 15px #8b5cf633;
+}
+
+.search-box button:hover {
+  background: linear-gradient(135deg, #a78bfa, #38bdf8);
+}
+
+/* RESULTS */
+
+.result-card {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  color: white;
+}
+
+.result-card:hover {
+  border-color: var(--secondary);
+}
+
+.result-card strong {
+  color: white;
+}
+
+.result-card p {
+  color: var(--muted);
+}
+
+.destination-tag {
+  background: #a3ff6f18;
+  color: var(--neon);
+  border: 1px solid #a3ff6f55;
+}
+
+.view-link {
+  color: var(--secondary);
+}
+
+.message {
+  color: var(--muted);
+}
+
+/* BUILDING SECTION */
+
+.eyebrow {
+  color: var(--secondary);
+}
+
+.section-heading h2 {
+  color: white;
+}
+
+.floor-count {
+  background: #8b5cf625;
+  color: #c4b5fd;
+  border: 1px solid #8b5cf655;
+}
+
+/* FLOOR PANEL */
+
+.floor-panel,
+.map-panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: 0 10px 35px #00000025;
+}
+
+.floor-panel h3,
+.map-header h3 {
+  color: white;
+}
+
+.floor-btn {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  color: var(--muted);
+}
+
+.floor-btn:hover {
+  border-color: var(--primary);
+  color: white;
+}
+
+.floor-btn.active {
+  background: linear-gradient(120deg, #8b5cf6, #536dfe);
+  color: white;
+  border-color: transparent;
+  box-shadow: 0 0 18px #8b5cf655;
+}
+
+/* MAP HEADER */
+
+.map-header p {
+  color: var(--muted);
+}
+
+.map-label {
+  background: #38bdf820;
+  color: var(--secondary);
+}
+
+/* FLOOR MAP */
+
+.floor-map {
+  background: #0d1220;
+  border: 1px solid #28334e;
+  border-radius: 14px;
+  overflow-x: auto;
+}
+
+/* SVG MAP */
+
+.floor-map svg {
+  display: block;
+  width: 100%;
+  min-width: 550px;
+  height: auto;
+}
+
+/* ROOM COLORS */
+
+.floor-map svg rect[id] {
+  fill: #1a2540;
+  stroke: #5278ed;
+  stroke-width: 2;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.floor-map svg rect[id]:hover {
+  fill: #49317d;
+  stroke: #a78bfa;
+  stroke-width: 3;
+}
+
+/* MAP TEXT */
+
+.floor-map svg text {
+  fill: #e2e8f0;
+  pointer-events: none;
+}
+
+/* CORRIDOR */
+
+.floor-map svg rect:not([id]) {
+  fill: #202b40;
+  stroke: #64748b;
+}
+
+/* LEGEND */
+
+.map-legend {
+  color: var(--muted);
+}
+
+.legend-room {
+  background: #1a2540;
+}
+
+.legend-office {
+  background: #f4dca3;
+}
+
+.legend-selected {
+  background: var(--neon);
+}
+
+/* EMPTY FLOOR */
+
+.empty-floor {
+  color: var(--muted);
+}
+
+/* FOOTER */
+
+footer {
+  border-color: var(--border);
+  color: var(--muted);
+}
+
+footer span {
+  color: var(--secondary);
+}
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+
+  .navbar {
+    background: #090b14;
+  }
+
+  .search-panel {
+    padding: 19px;
+  }
+
+  .map-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .floor-panel,
+  .map-panel {
+    background: var(--surface);
+  }
+
+  .floor-buttons {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .floor-map {
+    overflow-x: auto;
+  }
+
+  .floor-map svg {
+    min-width: 550px;
+  }
+
+  .map-legend {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+}
+/* FIX MOBILE DARK BACKGROUND */
+
+html,
+body,
+#app {
+  width: 100%;
+  min-height: 100%;
+  background: #090b14 !important;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
+
+.container {
+  width: 100%;
+  max-width: 1350px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 650px) {
+  .container {
+    width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .navbar {
+    width: 100%;
+  }
+
+  .search-panel,
+  .navigation-section,
+  .map-layout {
+    width: 100%;
+    min-width: 0;
+  }
+}
+/* NEON DESTINATION ANIMATION */
+
+@keyframes roomPulse {
+  from {
+    filter: drop-shadow(0 0 4px #a3ff6f);
+    opacity: 0.8;
+  }
+
+  to {
+    filter: drop-shadow(0 0 18px #a3ff6f);
+    opacity: 1;
   }
 }
